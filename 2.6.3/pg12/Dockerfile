@@ -46,3 +46,6 @@ RUN apt update \
         libcgal13 \
  && apt autoremove -y \
  && rm -rf /var/lib/apt/lists/*
+ 
+COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
+COPY ./update-postgis.sh /usr/local/bin
